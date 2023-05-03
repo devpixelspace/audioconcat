@@ -31,6 +31,7 @@ function concat(inputs, opts) {
 
   var renderer = ffmpeg()
     .input(filter)
+    .inputOptions("-protocol_whitelist concat,file,subfile,http,https,tcp,tls")
     .outputOptions('-acodec copy')
 
   var output = opts.output
